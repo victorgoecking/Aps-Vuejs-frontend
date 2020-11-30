@@ -1,18 +1,17 @@
 <template>
-  <div>
-    <b-sidebar id="sidebar-menu" aria-labelledby="sidebar-menu-title" no-header shadow bg-variant="dark" text-variant="light" backdrop backdrop-variant="dark">
+<div>
+    <b-sidebar id="sidebar-menu" aria-labelledby="sidebar-menu-title" no-header shadow bg-variant="dark" text-variant="light" backdrop backdrop-variant="dark" right>
       <template #default="{ hide }">
         <div class="p-3">
           <div class="d-flex align-items-center flex-column">
-            <b-avatar variant="primary" text="VG" class="mb-3 mt-3" size="6rem"></b-avatar>
-            <h4 id="sidebar-menu-title">LOGO</h4>
+            <b-avatar variant="primary" class="mb-3 mt-3" size="6rem"></b-avatar>
+            <h4 id="sidebar-menu-title">User</h4>
             <div class="divider-menu mb-3 mt-3"></div>
           </div>
           <nav class="mb-3">
             <b-nav vertical>
-              <b-nav-item active @click="hide">Início</b-nav-item>
-              <b-nav-item href="#link-1" @click="hide">Estudantes</b-nav-item>
-              <b-nav-item href="#link-2" @click="hide">Cadastrar</b-nav-item>
+              <b-nav-item active @click="hide">Dados</b-nav-item>
+              <b-nav-item href="#link-2" @click="hide">Sair</b-nav-item>
             </b-nav>
           </nav>
           <b-button variant="primary" block @click="hide">Fechar</b-button>
