@@ -81,9 +81,7 @@ export default {
   },
   
   created(){
-
     this.getInfo();
-
   },
 
   methods: {
@@ -96,39 +94,26 @@ export default {
                 const { data } = res;
                 
                 this.student = data;
-                
-                
-
             })
             .catch(()=>{
-
                 alert('Erro ao localizar estudante!');
-            
-
             });
         },
 
         onUpdate(){
             api.put(`students/${this.$route.params.id}`)
             .then(()=>{
-
                 alert('Estudante atualizado com sucesso')
-
             })
             .catch(()=>{
-
                 alert('Não foi possivel atualizar o estudante!');
-
-
             });
 
 
         },
 
         handleGoBack(){
-
             this.$router.go(-1)
-
         }
 
   }
