@@ -1,59 +1,55 @@
 <template>
   <div> 
-    <b-container>
-      <b-row class="justify-content-md-center mt-4">
-        <b-col col md="12">
-          <b-card 
-            header="Preencha os dados do estudante"
-            header-bg-variant="light"
-            header-text-variant="black"
+    
+    <b-card 
+      header="Preencha os dados do estudante"
+      header-bg-variant="light"
+      header-text-variant="black"
+    >
+    <b-card-text>
+      <div>
+        <b-form @submit="onSubmit" @reset="onReset" v-if="show">
+          <b-form-group id="input-group-1" label="Nome:" label-for="input-1">
+            <b-form-input
+              id="input-1"
+              v-model="student.name"
+              required
+              placeholder="Insira o nome"
+            ></b-form-input>
+          </b-form-group>
+          
+          <b-form-group
+            id="input-group-2"
+            label="Endereço de e-mail:"
+            label-for="input-2"
+            description="Nunca compartilharemos seu e-mail com mais ninguém."
           >
-          <b-card-text>
-            <div>
-              <b-form @submit="onSubmit" @reset="onReset" v-if="show">
-                <b-form-group id="input-group-1" label="Nome:" label-for="input-1">
-                  <b-form-input
-                    id="input-1"
-                    v-model="student.name"
-                    required
-                    placeholder="Insira o nome"
-                  ></b-form-input>
-                </b-form-group>
-                
-                <b-form-group
-                  id="input-group-2"
-                  label="Endereço de e-mail:"
-                  label-for="input-2"
-                  description="Nunca compartilharemos seu e-mail com mais ninguém."
-                >
-                <b-form-input
-                  id="input-2"
-                  v-model="student.email"
-                  type="email"
-                  required
-                  placeholder="Digite o email"
-                ></b-form-input>
-                </b-form-group>
-                
-                <b-form-group id="input-group-3" label="Telefone:" label-for="input-3">
-                  <b-form-input
-                    id="input-3"
-                    v-model="student.phone"
-                    required
-                    type="number"
-                    placeholder="Insira o telefone"
-                  ></b-form-input>
-                </b-form-group>
+          <b-form-input
+            id="input-2"
+            v-model="student.email"
+            type="email"
+            required
+            placeholder="Digite o email"
+          ></b-form-input>
+          </b-form-group>
+          
+          <b-form-group id="input-group-3" label="Telefone:" label-for="input-3">
+            <b-form-input
+              id="input-3"
+              v-model="student.phone"
+              required
+              type="number"
+              placeholder="Insira o telefone"
+            ></b-form-input>
+          </b-form-group>
 
-                <b-button type="submit" size="md" variant="primary">Enviar</b-button>
-                <b-button type="reset" size="md" class="ml-1" variant="outline-danger">Redefinir</b-button>
-              </b-form>
-            </div>
-          </b-card-text>
-          </b-card>
-        </b-col>
-      </b-row>
-    </b-container>
+          <b-button type="submit" size="md" variant="primary">Enviar</b-button>
+          <b-button type="reset" size="md" class="ml-1" variant="outline-danger">Redefinir</b-button>
+        </b-form>
+      </div>
+    </b-card-text>
+    </b-card>
+       
   </div>
 </template>
 

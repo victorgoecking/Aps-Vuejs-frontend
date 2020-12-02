@@ -1,21 +1,24 @@
 <template>
   <div id="app">
-    <sidebar-fixed />
-    <navbar />
-    <router-view></router-view>
     <sidebar />
+    <navbar />
+    <b-container class="bv-example-row mt-4">
+        <b-row class="justify-content-md-center">
+          <b-col col md="12">
+            <router-view></router-view>
+          </b-col>
+        </b-row>
+    </b-container>
   </div>
 </template>
 
 <script>
 import Navbar from './components/Navbar'
 import Sidebar from './components/Sidebar'
-import SidebarFixed from './components/SidebarFixed'
 export default {
   components: {
     Navbar,
-    Sidebar,
-    SidebarFixed
+    Sidebar
   }
 }
 </script>

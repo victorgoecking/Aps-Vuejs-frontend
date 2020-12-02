@@ -1,30 +1,32 @@
 <template>
 <div>
     <b-navbar class="" toggleable="lg" type="light" variant="light">
-      <b-navbar-brand href="#" ><b-button v-b-toggle.menu-sidebar variant="light" class="mt-1" size="sm"><b-icon icon="gear-fill"></b-icon></b-button></b-navbar-brand>
-      <b-navbar-brand href="#">
-        <img src="../assets/logo_adx.png" class="ml-4" width="65" alt="doctum">
+      
+      <b-navbar-brand href="#" ><b-button v-b-toggle.menu-sidebar variant="light" size="md"><b-icon class="mt-1" icon="list"></b-icon></b-button></b-navbar-brand>
+
+      <b-navbar-brand href="#" class="ml-auto">
+        <img src="../assets/logo_adx.png" class="" width="73" alt="doctum">
       </b-navbar-brand>
 
-      <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
+      <!-- <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
-      <b-collapse id="nav-collapse" is-nav>
+      <b-collapse id="nav-collapse" is-nav> -->
 
-        <b-navbar-nav>
+        <!-- <b-navbar-nav>
           <b-nav-item href="/">Início</b-nav-item>
           <b-nav-item-dropdown text="Estudantes" left>
             <b-dropdown-item href="/register">Novo</b-dropdown-item>
             <b-dropdown-item href="/students">Lista</b-dropdown-item>
           </b-nav-item-dropdown>
-        </b-navbar-nav>
+        </b-navbar-nav> -->
 
         <!-- Right aligned nav items -->
-        <b-navbar-nav class="ml-auto">
-        
+        <!-- <b-navbar-nav class="ml-auto mr-0 float-right"> -->
+        <b-navbar-brand href="#" class="ml-auto mr-0">
         <div>
           <b-dropdown variant="light" right>
             <template #button-content>
-              <b-avatar variant="primary" class="mt-auto mb-auto" size="2rem"></b-avatar>
+              <b-avatar variant="primary" class="mt-auto mb-auto" size="1.8rem"></b-avatar>
               <!-- <b-icon icon="gear-fill" aria-hidden="true"></b-icon> -->
             </template>
             <b-dropdown-item-button>
@@ -62,9 +64,9 @@
             </b-dropdown-item-button>
           </b-dropdown>
         </div>
-        
-        </b-navbar-nav>
-      </b-collapse>
+        </b-navbar-brand>
+        <!-- </b-navbar-nav> -->
+      <!-- </b-collapse> -->
     </b-navbar>
   </div>
 </template>

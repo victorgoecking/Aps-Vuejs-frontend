@@ -1,29 +1,37 @@
+
 <template>
 <div>
-    <b-sidebar id="sidebar-menu" aria-labelledby="sidebar-menu-title" no-header shadow bg-variant="dark" text-variant="light" backdrop backdrop-variant="dark" right>
-      <template #default="{ hide }">
-        <div class="p-3">
-          <div class="d-flex align-items-center flex-column">
-            <b-avatar variant="primary" class="mb-3 mt-3" size="6rem"></b-avatar>
-            <h4 id="sidebar-menu-title">User</h4>
-            <div class="divider-menu mb-3 mt-3"></div>
-          </div>
-          <nav class="mb-3">
-            <b-nav vertical>
-              <b-nav-item active @click="hide">Dados</b-nav-item>
-              <b-nav-item href="#link-2" @click="hide">Sair</b-nav-item>
-            </b-nav>
-          </nav>
-          <b-button variant="primary" block @click="hide">Fechar</b-button>
-        </div>
-      </template>
-    </b-sidebar>
+
+  <b-sidebar
+    id="menu-sidebar"
+    shadow
+    backdrop backdrop-variant="light"
+    aria-labelledby="menu-slidebar"
+  >
+
+    <div class="text-center mt-4">
+      <b-navbar-brand href="https://www.doctum.edu.br/?home">
+        <img src="../assets/doctum_logo.png" class="ml-4" width="80%" alt="doctum">
+      </b-navbar-brand>
+      <p class="text-muted mt-3 mb-0">Estudante</p>
+      <b-list-group class="mt-3">
+        
+          
+            <b-list-group-item class="item-menu-sidebar" href="/">Início</b-list-group-item>
+            <b-list-group-item class="item-menu-sidebar" href="/register">Novo</b-list-group-item>
+            <b-list-group-item class="item-menu-sidebar" href="/students">Lista</b-list-group-item>
+          
+        
+      </b-list-group>
+    </div>
+  </b-sidebar>
+
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Sidebar',
+  name: 'SidebarFixed',
   props: {
     msg: String
   }
@@ -31,16 +39,8 @@ export default {
 </script>
 
 <style scoped>
-.nav-item > .nav-link{
-  color: #FFF
-}
-
-.nav-item > .nav-link:hover{
-  color: #CCC
-}
-
-.divider-menu{
-  border: 1px solid #FFF;
-  width: 100%;
+.item-menu-sidebar:hover {
+  background: #0879FA;
+  color: aliceblue;
 }
 </style>

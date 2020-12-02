@@ -1,24 +1,31 @@
 <template>
-  <div class="justify-content-md-center">
-    
-    <b-table
-      head-variant="dark"
-      striped 
-      hover
-      :fields="fields" 
-      :items="items"
+  <div>
+    <b-card 
+      header="Lista de estudante"
+      header-bg-variant="light"
+      header-text-variant="black"
     >
-    
-    <template #cell(edit)="row">
+        <b-table
+        ref="table"
+        head-variant=""
+        striped 
+        hover
+        responsive="md"
+        :fields="fields" 
+        :items="items"
+        >
+        
+        <template #cell(edit)="row">
 
 
-    <b-button size="sm" title="Editar" variant="warning" @click="handleEdit(row.item.id)" class="mr-1"><b-icon icon="pencil-square"></b-icon></b-button>
-    <b-button size="sm" title="Deletar" variant="danger" @click="handleDelete(row.item.id)" ><b-icon icon="trash"></b-icon></b-button>
+        <b-button size="sm" title="Editar" variant="warning" @click="handleEdit(row.item.id)" class="mr-1"><b-icon icon="pencil-square"></b-icon></b-button>
+        <b-button size="sm" title="Deletar" variant="danger" @click="handleDelete(row.item.id)" ><b-icon icon="trash"></b-icon></b-button>
 
 
-    </template>
-    
-    </b-table>
+        </template>
+        
+        </b-table>
+    </b-card>
   </div>
 </template>
 
@@ -80,6 +87,7 @@ export default {
           
           if(confirm('Você realmente deseja excluir este estudante?')){
             api.delete(`students/${ item }`)
+            this.$refs.table.refresh()
             .then(()=>{
                 alert('Estudante excluído com sucesso!')
             })
