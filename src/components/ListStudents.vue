@@ -87,9 +87,10 @@ export default {
           
           if(confirm('Você realmente deseja excluir este estudante?')){
             api.delete(`students/${ item }`)
-            this.$refs.table.refresh()
             .then(()=>{
                 alert('Estudante excluído com sucesso!')
+                this.listStudents()
+                this.$refs.table.refresh()
             })
             .catch(()=>{
                 alert('Não foi possivel excluir o estudante!');
