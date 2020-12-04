@@ -95,9 +95,10 @@ export default {
         },
 
         onUpdate(){
-            api.put(`students/${this.$route.params.id}`)
+            api.put(`students/${this.$route.params.id}`, this.student)
             .then(()=>{
                 alert('Estudante atualizado com sucesso')
+                this.$router.push('/students')
             })
             .catch(()=>{
                 alert('Não foi possivel atualizar o estudante!');
